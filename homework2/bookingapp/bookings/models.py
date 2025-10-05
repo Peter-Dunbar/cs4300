@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Movie(models.Model):
     title = models.CharField(max_length=200)
@@ -23,4 +24,4 @@ class Booking(models.Model):
     booking_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.booking_date
+        return f"Booking: {self.movie.title} - {self.seat.seat_number} by {self.user.username}"
