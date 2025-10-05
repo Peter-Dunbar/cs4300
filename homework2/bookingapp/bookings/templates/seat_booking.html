@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book a Seat</title>
+</head>
+<body>
+    <h1>Book a Seat for {{ movie.title }}</h1>
+    <ul>
+        {% for seat in seats %}
+            <li>
+                Seat {{ seat.seat_number }} - 
+                {% if seat.is_booked %}
+                    <span style="color:red;">Booked</span>
+                {% else %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="seat_id" value="{{ seat.id }}">
+                        <button type="submit">Book</button>
+                    </form>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

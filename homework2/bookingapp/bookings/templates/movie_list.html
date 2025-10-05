@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Listings</title>
+</head>
+<body>
+    <h1>Available Movies</h1>
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <strong>{{ movie.title }}</strong> ({{ movie.release_date }}) - {{ movie.duration }} mins <br>
+                {{ movie.description }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

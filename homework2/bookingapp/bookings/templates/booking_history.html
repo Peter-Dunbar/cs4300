@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking History</title>
+</head>
+<body>
+    <h1>Your Bookings</h1>
+    <ul>
+        {% for booking in bookings %}
+            <li>{{ booking.movie.title }} - Seat {{ booking.seat.seat_number }} ({{ booking.booking_date }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
