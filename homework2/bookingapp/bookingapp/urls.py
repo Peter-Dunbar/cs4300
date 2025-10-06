@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from django.shortcuts import redirect
 from bookings.views import MovieViewSet, SeatViewSet, BookingViewSet
 
 router = routers.DefaultRouter()
@@ -28,4 +29,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('', include('bookings.urls')),
+    path('', lambda request: redirect('movie_list', permanent=False))
 ]
