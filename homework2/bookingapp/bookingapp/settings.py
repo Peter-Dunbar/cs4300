@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-ir&+oa!ux1fa0k2wbyjqa*g4e7l@%mv)5#b8(wzgcr#o%n=684
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'editor-peterdeveduenviro-19.devedu.io'
+]
 
 
 # Application definition
