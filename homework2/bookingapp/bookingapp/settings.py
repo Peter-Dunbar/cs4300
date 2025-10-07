@@ -30,6 +30,12 @@ ALLOWED_HOSTS = [
     'app-peterdeveduenviro-19.devedu.io',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [],  # disable login/auth requirement
+}
 
 # Application definition
 

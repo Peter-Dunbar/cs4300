@@ -1,8 +1,14 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
+from rest_framework import routers
+from bookings.views import MovieViewSet, SeatViewSet, BookingViewSet
+
+router = routers.DefaultRouter()
+router.register(r'movies', MovieViewSet)
+router.register(r'seats', SeatViewSet)
+router.register(r'bookings', BookingViewSet)
 
 urlpatterns = [
-    path('movies/', views.movie_list, name="movie_list"),
-    path('movies/<int:movie_id>/book/', views.seat_booking, name="seat_booking"),
-    path('history/', views.booking_history, name="booking_history"),
+    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
 ]
